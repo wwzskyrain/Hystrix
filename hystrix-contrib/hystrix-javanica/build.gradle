@@ -68,7 +68,7 @@ compileAjcJava {
 }
 
 task ajcTest(type: Test) {
-    testClassesDir = sourceSets.ajcTest.output.classesDir
+    setTestClassesDirs(sourceSets.ajcTest.output.getClassesDirs())
     classpath = sourceSets.ajcTest.runtimeClasspath
     if (System.getProperty('DEBUG', 'false') == 'true') {
         jvmArgs '-Xdebug',
